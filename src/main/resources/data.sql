@@ -1,0 +1,16 @@
+INSERT INTO RECIPE (recipe, description, difficulty, image_url, positions) VALUES
+('Classic Cheeseburger', 'A classic beef burger topped with cheddar cheese, lettuce, and tomato.', 'easy', 'https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg', 1),
+('BBQ Bacon Burger', 'A beef patty with crispy bacon, BBQ sauce, and onion rings.', 'medium', 'https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg', 2),
+('Mushroom Swiss Burger', 'A juicy beef patty topped with sautéed mushrooms and Swiss cheese.', 'hard', 'https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg', 3),
+('Bacon Lettuce Tomato Burger', 'A simple burger with crispy bacon, fresh lettuce, and ripe tomato.', 'easy', 'https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg', 4),
+('Avocado Burger', 'A beef patty topped with creamy avocado, lettuce, and tomato.', 'medium', 'https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg', 5),
+('Spicy Jalapeño Burger', 'A spicy beef burger with jalapeños, pepper jack cheese, and spicy mayo.', 'hard', 'https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg', 6),
+('Cheddar BBQ Burger', 'A beef burger topped with cheddar cheese, BBQ sauce, and crispy onions.', 'easy', 'https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg', 7),
+('Stuffed Burger', 'A burger patty stuffed with cheese and topped with lettuce and tomato.', 'medium', 'https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg', 8),
+('Bison Burger', 'A lean bison patty with caramelized onions, mushrooms, and Swiss cheese.', 'hard', 'https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg', 9),
+('Blue Cheese Burger', 'A beef patty with crumbled blue cheese, caramelized onions, and lettuce.', 'easy', 'https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg', 10),
+('Gourmet Truffle Burger', 'A luxurious beef burger with truffle aioli, foie gras, and arugula.', 'medium', 'https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg', 11),
+('Lamb Burger with Tzatziki', 'A lamb patty with homemade tzatziki sauce, feta cheese, and cucumber.', 'hard', 'https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg', 12),
+('Elk Burger', 'An elk patty topped with wild mushrooms, caramelized onions, and aged cheddar.', 'easy', 'https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg', 13),
+('Beef Wellington Burger', 'A burger inspired by Beef Wellington, with pâté, mushrooms, and wrapped in pastry.', 'medium', 'https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg', 14),
+('Surf and Turf Burger', 'A burger with a beef patty and grilled shrimp, topped with garlic aioli and lettuce.', 'hard', 'https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg', 15);
