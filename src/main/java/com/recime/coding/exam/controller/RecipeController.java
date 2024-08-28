@@ -31,9 +31,12 @@ public class RecipeController {
         if (difficulty == null || difficulty.isEmpty()) {
             return ResponseEntity.badRequest().body("A difficulty is required for filtering trending recipes.");
         }
+        if (!isValidDifficulty(difficulty)) {
+            return ResponseEntity.badRequest().body("Invalid difficulty level. Valid values are: easy, medium, hard.");
+        }
         List<Recipe> filteredRecipes = recipeService.getRecipesByDifficulty(difficulty);
         if (filteredRecipes.isEmpty()) {
-            return ResponseEntity.badRequest().body("Invalid filter.");
+            return ResponseEntity.noContent().build();
         }
         return ResponseEntity.ok(recipeService.getRecipesByDifficulty(difficulty));
     }
