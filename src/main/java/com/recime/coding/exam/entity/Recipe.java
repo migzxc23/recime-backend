@@ -29,4 +29,12 @@ public class Recipe {
         this.imageUrl = imageUrl;
         this.positions = positions;
     }
+
+    public int getPositions() {
+        return positions;
+    }
+
+    public void setPositions(int positions) {
+        this.positions = positions;
+    }
 }
