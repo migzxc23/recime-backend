@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "12a60f80-d7af-47b4-b513-7a5e2ad266ad",
+		"name": "ReciMe Backend API Testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17212588"
+	},
+	"item": [
+		{
+			"name": "Get All Trending Recipes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body contains recipe\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[0].recipe).to.eql(\"Stuffed Burger\");\r",
+							"    pm.expect(jsonData[4].recipe).to.eql(\"Bacon Lettuce Tomato Burger\");\r",
+							"    pm.expect(jsonData[6].recipe).to.eql(\"Blue Cheese Burger\");\r",
+							"    pm.expect(jsonData[10].recipe).to.eql(\"Beef Wellington Burger\");\r",
+							"    pm.expect(jsonData[13].recipe).to.eql(\"Classic Cheeseburger\");\r",
+							"    \r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/recipes/trending",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes",
+						"trending"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "New Request",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/recipes/trending",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recipes",
+								"trending"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Aug 2024 06:05:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 8,\n        \"recipe\": \"Stuffed Burger\",\n        \"description\": \"A burger patty stuffed with cheese and topped with lettuce and tomato.\",\n        \"difficulty\": \"medium\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 1\n    },\n    {\n        \"id\": 7,\n        \"recipe\": \"Cheddar BBQ Burger\",\n        \"description\": \"A beef burger topped with cheddar cheese, BBQ sauce, and crispy onions.\",\n        \"difficulty\": \"easy\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 2\n    },\n    {\n        \"id\": 6,\n        \"recipe\": \"Spicy Jalapeño Burger\",\n        \"description\": \"A spicy beef burger with jalapeños, pepper jack cheese, and spicy mayo.\",\n        \"difficulty\": \"hard\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 3\n    },\n    {\n        \"id\": 5,\n        \"recipe\": \"Avocado Burger\",\n        \"description\": \"A beef patty topped with creamy avocado, lettuce, and tomato.\",\n        \"difficulty\": \"medium\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 4\n    },\n    {\n        \"id\": 4,\n        \"recipe\": \"Bacon Lettuce Tomato Burger\",\n        \"description\": \"A simple burger with crispy bacon, fresh lettuce, and ripe tomato.\",\n        \"difficulty\": \"easy\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 5\n    },\n    {\n        \"id\": 2,\n        \"recipe\": \"BBQ Bacon Burger\",\n        \"description\": \"A beef patty with crispy bacon, BBQ sauce, and onion rings.\",\n        \"difficulty\": \"medium\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 6\n    },\n    {\n        \"id\": 10,\n        \"recipe\": \"Blue Cheese Burger\",\n        \"description\": \"A beef patty with crumbled blue cheese, caramelized onions, and lettuce.\",\n        \"difficulty\": \"easy\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 7\n    },\n    {\n        \"id\": 11,\n        \"recipe\": \"Gourmet Truffle Burger\",\n        \"description\": \"A luxurious beef burger with truffle aioli, foie gras, and arugula.\",\n        \"difficulty\": \"medium\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 8\n    },\n    {\n        \"id\": 9,\n        \"recipe\": \"Bison Burger\",\n        \"description\": \"A lean bison patty with caramelized onions, mushrooms, and Swiss cheese.\",\n        \"difficulty\": \"hard\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 9\n    },\n    {\n        \"id\": 15,\n        \"recipe\": \"Surf and Turf Burger\",\n        \"description\": \"A burger with a beef patty and grilled shrimp, topped with garlic aioli and lettuce.\",\n        \"difficulty\": \"hard\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 10\n    },\n    {\n        \"id\": 14,\n        \"recipe\": \"Beef Wellington Burger\",\n        \"description\": \"A burger inspired by Beef Wellington, with pâté, mushrooms, and wrapped in pastry.\",\n        \"difficulty\": \"medium\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 11\n    },\n    {\n        \"id\": 12,\n        \"recipe\": \"Lamb Burger with Tzatziki\",\n        \"description\": \"A lamb patty with homemade tzatziki sauce, feta cheese, and cucumber.\",\n        \"difficulty\": \"hard\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 12\n    },\n    {\n        \"id\": 13,\n        \"recipe\": \"Elk Burger\",\n        \"description\": \"An elk patty topped with wild mushrooms, caramelized onions, and aged cheddar.\",\n        \"difficulty\": \"easy\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 13\n    },\n    {\n        \"id\": 1,\n        \"recipe\": \"Classic Cheeseburger\",\n        \"description\": \"A classic beef burger topped with cheddar cheese, lettuce, and tomato.\",\n        \"difficulty\": \"easy\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 14\n    },\n    {\n        \"id\": 3,\n        \"recipe\": \"Mushroom Swiss Burger\",\n        \"description\": \"A juicy beef patty topped with sautéed mushrooms and Swiss cheese.\",\n        \"difficulty\": \"hard\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 15\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Easy Recipes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body contains recipe\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[1].recipe).to.eql(\"Bacon Lettuce Tomato Burger\");\r",
+							"    pm.expect(jsonData[4].recipe).to.eql(\"Classic Cheeseburger\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/recipes/trending/filter?difficulty=easy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes",
+						"trending",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "difficulty",
+							"value": "easy"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Easy Recipes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/recipes/trending/filter?difficulty=easy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recipes",
+								"trending",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "difficulty",
+									"value": "easy"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Aug 2024 06:06:48 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 7,\n        \"recipe\": \"Cheddar BBQ Burger\",\n        \"description\": \"A beef burger topped with cheddar cheese, BBQ sauce, and crispy onions.\",\n        \"difficulty\": \"easy\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 2\n    },\n    {\n        \"id\": 4,\n        \"recipe\": \"Bacon Lettuce Tomato Burger\",\n        \"description\": \"A simple burger with crispy bacon, fresh lettuce, and ripe tomato.\",\n        \"difficulty\": \"easy\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 5\n    },\n    {\n        \"id\": 10,\n        \"recipe\": \"Blue Cheese Burger\",\n        \"description\": \"A beef patty with crumbled blue cheese, caramelized onions, and lettuce.\",\n        \"difficulty\": \"easy\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 7\n    },\n    {\n        \"id\": 13,\n        \"recipe\": \"Elk Burger\",\n        \"description\": \"An elk patty topped with wild mushrooms, caramelized onions, and aged cheddar.\",\n        \"difficulty\": \"easy\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 13\n    },\n    {\n        \"id\": 1,\n        \"recipe\": \"Classic Cheeseburger\",\n        \"description\": \"A classic beef burger topped with cheddar cheese, lettuce, and tomato.\",\n        \"difficulty\": \"easy\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 14\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Medium Recipes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body contains recipe\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[1].recipe).to.eql(\"Avocado Burger\");\r",
+							"    pm.expect(jsonData[3].recipe).to.eql(\"Gourmet Truffle Burger\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/recipes/trending/filter?difficulty=medium",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes",
+						"trending",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "difficulty",
+							"value": "medium"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Medium Recipes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/recipes/trending/filter?difficulty=medium",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recipes",
+								"trending",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "difficulty",
+									"value": "medium"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Aug 2024 06:06:56 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 8,\n        \"recipe\": \"Stuffed Burger\",\n        \"description\": \"A burger patty stuffed with cheese and topped with lettuce and tomato.\",\n        \"difficulty\": \"medium\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 1\n    },\n    {\n        \"id\": 5,\n        \"recipe\": \"Avocado Burger\",\n        \"description\": \"A beef patty topped with creamy avocado, lettuce, and tomato.\",\n        \"difficulty\": \"medium\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 4\n    },\n    {\n        \"id\": 2,\n        \"recipe\": \"BBQ Bacon Burger\",\n        \"description\": \"A beef patty with crispy bacon, BBQ sauce, and onion rings.\",\n        \"difficulty\": \"medium\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 6\n    },\n    {\n        \"id\": 11,\n        \"recipe\": \"Gourmet Truffle Burger\",\n        \"description\": \"A luxurious beef burger with truffle aioli, foie gras, and arugula.\",\n        \"difficulty\": \"medium\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 8\n    },\n    {\n        \"id\": 14,\n        \"recipe\": \"Beef Wellington Burger\",\n        \"description\": \"A burger inspired by Beef Wellington, with pâté, mushrooms, and wrapped in pastry.\",\n        \"difficulty\": \"medium\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 11\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Hard Recipes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body contains recipe\", function () {\r",
+							"    var jsonData = pm.response.json();\r",
+							"    pm.expect(jsonData[1].recipe).to.eql(\"Bison Burger\");\r",
+							"    pm.expect(jsonData[3].recipe).to.eql(\"Lamb Burger with Tzatziki\");\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/recipes/trending/filter?difficulty=hard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"recipes",
+						"trending",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "difficulty",
+							"value": "hard"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Hard Recipes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/recipes/trending/filter?difficulty=hard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"recipes",
+								"trending",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "difficulty",
+									"value": "hard"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Aug 2024 06:07:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 6,\n        \"recipe\": \"Spicy Jalapeño Burger\",\n        \"description\": \"A spicy beef burger with jalapeños, pepper jack cheese, and spicy mayo.\",\n        \"difficulty\": \"hard\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 3\n    },\n    {\n        \"id\": 9,\n        \"recipe\": \"Bison Burger\",\n        \"description\": \"A lean bison patty with caramelized onions, mushrooms, and Swiss cheese.\",\n        \"difficulty\": \"hard\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 9\n    },\n    {\n        \"id\": 15,\n        \"recipe\": \"Surf and Turf Burger\",\n        \"description\": \"A burger with a beef patty and grilled shrimp, topped with garlic aioli and lettuce.\",\n        \"difficulty\": \"hard\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 10\n    },\n    {\n        \"id\": 12,\n        \"recipe\": \"Lamb Burger with Tzatziki\",\n        \"description\": \"A lamb patty with homemade tzatziki sauce, feta cheese, and cucumber.\",\n        \"difficulty\": \"hard\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 12\n    },\n    {\n        \"id\": 3,\n        \"recipe\": \"Mushroom Swiss Burger\",\n        \"description\": \"A juicy beef patty topped with sautéed mushrooms and Swiss cheese.\",\n        \"difficulty\": \"hard\",\n        \"imageUrl\": \"https://ddg0cip9uom1w.cloudfront.net/code-challenge/burger.jpg\",\n        \"positions\": 15\n    }\n]"
+				}
+			]
+		}
+	]
+}
