@@ -4,12 +4,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Recipe {
@@ -22,19 +22,4 @@ public class Recipe {
     private String imageUrl;
     private int positions;
 
-    public Recipe(String recipe, String description, String difficulty, String imageUrl, int positions) {
-        this.recipe = recipe;
-        this.description = description;
-        this.difficulty = difficulty;
-        this.imageUrl = imageUrl;
-        this.positions = positions;
-    }
-
-    public int getPositions() {
-        return positions;
-    }
-
-    public void setPositions(int positions) {
-        this.positions = positions;
-    }
 }
